@@ -17,9 +17,8 @@
   "dependencies": {
     "browser-sync": "^2.10.1",
     "chokidar": "^1.4.1",
-    "commander": "^2.9.0",
+    "commander": "2.8.0",
     "elm": "^0.16.0",
-    "lodash.chunk": "^3.0.1",
-    "lodash.times": "^3.0.3"
+    "lodash.chunk": "^3.0.1"
   }
 }
