@@ -1,0 +1,24 @@
+{
+  "name": "elm-server",
+  "version": "1.0.0",
+  "description": "Hot reloading Elm server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "elm",
+    "hot",
+    "reload",
+    "reloading",
+    "server"
+  ],
+  "author": "Max Gurewitz",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.10.1",
+    "chokidar": "^1.4.1",
+    "commander": "^2.9.0",
+    "elm": "^0.16.0"
+  }
+}
