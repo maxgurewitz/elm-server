@@ -1,7 +1,7 @@
 {
   "name": "elm-server",
-  "version": "1.0.0",
-  "description": "Hot reloading Elm server.",
+  "version": "0.0.1",
+  "description": "An npm package for compiling, serving, and hot-reloading Elm code.",
   "repository": {
     "type": "git",
     "url": "https://github.com/maxgurewitz/elm-server.git"

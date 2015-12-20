@@ -12,9 +12,7 @@ commander
 
 const descriptionWidth = 35;
 const unformattedWatchDescription = 'Path to served directory.  If provided, ' +
-  'will prefix output file path.  Served assets are live reloaded.  Useful' +
-  ' for serving non-html non-js assets.  Defaults to directory ' +
-  'of output file path.';
+  'will prefix output file path.  Defaults to directory of output file path.';
 
 const watchDescription =
   chunk(unformattedWatchDescription, descriptionWidth)
