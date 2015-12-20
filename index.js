@@ -9,7 +9,8 @@ const elmPackage = require(path.join(__dirname, 'elm-package'));
 
 process.env.ELM_HOME = platform.shareDir;
 
-module.exports = function elmServer(inputFilesArg, opts) {
+module.exports = function elmServer(inputFilesArg, optsArg) {
+  const opts = optsArg || {};
   const inputFiles = inputFilesArg instanceof Array ?
     inputFilesArg :
     [inputFilesArg];
