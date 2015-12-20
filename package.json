@@ -2,6 +2,10 @@
   "name": "elm-server",
   "version": "1.0.0",
   "description": "Hot reloading Elm server.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxgurewitz/elm-server.git"
+  },
   "main": "index.js",
   "bin": "./bin.js",
   "scripts": {},
