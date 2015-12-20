@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Hot reloading Elm server.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "bin": "./bin.js",
+  "scripts": {},
   "keywords": [
     "elm",
     "hot",
@@ -19,6 +18,8 @@
     "browser-sync": "^2.10.1",
     "chokidar": "^1.4.1",
     "commander": "^2.9.0",
-    "elm": "^0.16.0"
+    "elm": "^0.16.0",
+    "lodash.chunk": "^3.0.1",
+    "lodash.times": "^3.0.3"
   }
 }
