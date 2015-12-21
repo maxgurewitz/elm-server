@@ -8,11 +8,11 @@ const version = require('./package.json').version;
 commander
   .version(version)
   .option('-o, --output <path>', 'Path to elm-make output [index.html].')
+  .option('-s, --start-path <path>', 'Initial path when opening browser.')
   .usage('[options] <inputFile> [inputFiles...]')
 
 const descriptionWidth = 35;
-const unformattedWatchDescription = 'Path to served directory.  If provided, ' +
-  'will prefix output file path.  Defaults to directory of output file path.';
+const unformattedWatchDescription = 'Path to served directory.  Defaults to directory of output file path.';
 
 const watchDescription =
   chunk(unformattedWatchDescription, descriptionWidth)
@@ -29,4 +29,8 @@ if (!commander.args.length) {
   process.exit();
 }
 
-elmServer(commander.args, { watch: commander.watch, output: commander.output });
+elmServer(commander.args, {
+  output: commander.output,
+  startPath: commander.startPath,
+  watch: commander.watch
+});

@@ -18,15 +18,14 @@ module.exports = function elmServer(inputFilesArg, optsArg) {
   const outputFile =
     !opts.output ?
       'index.html' :
-      opts.watch ?
-        path.join(opts.watch, opts.output) :
-        opts.output;
+      opts.output;
 
   const watch = opts.watch || path.dirname(outputFile);
   const startPath =
-    path.extname(outputFile) === '.html' ?
+    opts.startPath ||
+    (path.extname(outputFile) === '.html' ?
       path.basename(outputFile) :
-      '/';
+      '/');
 
   function elmMake() {
     const makeArgs = inputFiles.concat(['--output', outputFile]);
