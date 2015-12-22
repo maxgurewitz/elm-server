@@ -1,39 +1,41 @@
 'use strict';
-const browserSync = require('browser-sync');
-const chokidar = require('chokidar');
-const spawn = require('child_process').spawn;
-const platform = require('elm/platform');
-const path = require('path');
-const fs = require('fs');
-const elmPackage = require(path.join(process.cwd(), 'elm-package'));
+var browserSync = require('browser-sync');
+var chokidar = require('chokidar');
+var spawn = require('child_process').spawn;
+var platform = require('elm/platform');
+var path = require('path');
+var fs = require('fs');
+var elmPackage = require(path.join(process.cwd(), 'elm-package'));
 
-const sourceDirectories =
+var sourceDirectories =
   elmPackage['source-directories']
-    .map(directory => path.join(directory, '**', '*.elm'));
+    .map(function createGlob(directory) {
+      return path.join(directory, '**', '*.elm');
+    });
 
 process.env.ELM_HOME = platform.shareDir;
 
 module.exports = function elmServer(inputFilesArg, optsArg) {
-  const opts = optsArg || {};
-  const inputFiles = inputFilesArg instanceof Array ?
+  var opts = optsArg || {};
+  var inputFiles = inputFilesArg instanceof Array ?
     inputFilesArg :
     [inputFilesArg];
 
-  const outputFile =
+  var outputFile =
     !opts.output ?
       'index.html' :
       opts.output;
 
-  const watch = opts.watch || path.dirname(outputFile);
-  const startPath =
+  var watch = opts.watch || path.dirname(outputFile);
+  var startPath =
     opts.startPath ||
     (path.extname(outputFile) === '.html' ?
       path.basename(outputFile) :
       '/');
 
   function elmMake() {
-    const makeArgs = inputFiles.concat(['--output', outputFile]);
-    const executablePath = platform.executablePaths['elm-make'];
+    var makeArgs = inputFiles.concat(['--output', outputFile]);
+    var executablePath = platform.executablePaths['elm-make'];
 
     spawn(executablePath, makeArgs, { stdio: 'inherit' });
   }
@@ -52,4 +54,4 @@ module.exports = function elmServer(inputFilesArg, optsArg) {
     startPath: startPath,
     files: [path.join(watch, '**', '*')]
   });
-}
+};
