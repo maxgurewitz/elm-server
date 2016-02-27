@@ -9,6 +9,7 @@ commander
   .version(version)
   .option('-o, --output <path>', 'Path to elm-make output [index.html].')
   .option('-s, --start-path <path>', 'Initial path when opening browser.')
+  .option('-a, --spa <true>', 'Set to whatever to enable spa mode.')
   .usage('[options] <inputFile> [inputFiles...]');
 
 var descriptionWidth = 35;
@@ -34,5 +35,6 @@ if (!commander.args.length) {
 elmServer(commander.args, {
   output: commander.output,
   startPath: commander.startPath,
-  watch: commander.watch
+  watch: commander.watch,
+  spa: commander.spa
 });
