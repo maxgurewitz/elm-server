@@ -1,3 +1,3 @@
-module SomeModule.Sub where
+module SomeModule.Sub exposing (..)
 
 foo = "foo"

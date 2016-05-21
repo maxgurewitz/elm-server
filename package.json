@@ -8,7 +8,9 @@
   },
   "main": "index.js",
   "bin": "./bin.js",
-  "scripts": {},
+  "scripts": {
+    "test": "node ./bin.js test/src/Main.elm -o test/dist/test.html"
+  },
   "keywords": [
     "elm",
     "hot",
@@ -22,7 +24,7 @@
     "browser-sync": "^2.10.1",
     "chokidar": "^1.4.1",
     "commander": "2.8.0",
-    "elm": "^0.16.0",
+    "elm": "^0.17.0",
     "lodash.chunk": "^3.0.1"
   }
 }

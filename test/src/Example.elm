@@ -1,3 +1,3 @@
-module Example where
+module Example exposing (..)
 
 foo = "bar"
