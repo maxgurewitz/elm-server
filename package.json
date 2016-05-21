@@ -1,6 +1,6 @@
 {
   "name": "elm-server",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "An npm package for compiling, serving, and hot-reloading Elm code.",
   "repository": {
     "type": "git",
