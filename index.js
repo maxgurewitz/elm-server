@@ -1,6 +1,7 @@
 'use strict';
 var browserSync = require('browser-sync');
 var chokidar = require('chokidar');
+var historyApiFallback = require('connect-history-api-fallback');
 var spawn = require('child_process').spawn;
 var platform = require('elm/platform');
 var path = require('path');
@@ -27,6 +28,8 @@ module.exports = function elmServer(inputFilesArg, optsArg) {
       opts.output;
 
   var watch = opts.watch || path.dirname(outputFile);
+  var isSpa = opts.spa || false;
+
   var startPath =
     opts.startPath ||
     (path.extname(outputFile) === '.html' ?
@@ -47,7 +50,10 @@ module.exports = function elmServer(inputFilesArg, optsArg) {
     .on('change', elmMake);
 
   return browserSync({
-    server: watch,
+    server: {
+      baseDir: watch,
+      middleware: isSpa ? [ historyApiFallback() ] : []
+    },
     watchOptions: {
       ignored: /(elm-stuff|\.elm)/
     },

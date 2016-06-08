@@ -26,6 +26,7 @@ $ elm-server path/to/Main.elm
     -V, --version            output the version number
     -o, --output <path>      Path to elm-make output [index.html].
     -s, --start-path <path>  Initial path when opening browser.
+    -a. --spa                Set to something to enable single page application mode
     -w, --watch <directory>  Path to served directory.  Defaults
                               to directory of output file path.
 ```
@@ -58,6 +59,13 @@ $ elm-server src/elm/Main.elm \
     --watch assets \
     --start-path html/index.html
 ```
+
+###### spa
+When you have a Single Page Application with routing on the client side, this mode is for you. It uses the [connect-history-api-fallback](https://github.com/bripkens/connect-history-api-fallback) library.
+
+It currently assumes that you are using index.html as the entry point for your app.
+
+
 
 #### Programmatic Usage
 

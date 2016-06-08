@@ -23,6 +23,7 @@
   "dependencies": {
     "browser-sync": "^2.10.1",
     "chokidar": "^1.4.1",
+    "connect-history-api-fallback": "^1.1.0",
     "commander": "2.8.0",
     "elm": "^0.17.0",
     "lodash.chunk": "^3.0.1"
